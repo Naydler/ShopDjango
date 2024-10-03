@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>product List </title>
+</head>
+    <body>
+        <h1>Products list<h1>
+        {% if products%}
+        <ul>
+            {% for product in products %}
+                <li>{{ product.name }} - {{ product.price }} - {{ product.category }} - {{ product.size }} </li>
+                <button><a href="{% url 'update_product' product.id %}">Editar</a></button>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p> no products in the list</p>
+        {% endif %}
+    </body>
+</html>
